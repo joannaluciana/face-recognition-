@@ -40,6 +40,12 @@ while True:
         matches = face_recognition.compare_faces(encodelistKnown, encodeFace)
         faceDis = face_recognition.face_distance(encodelistKnown, encodeFace)
         print(faceDis)
+        matchIndex = np.argmin(faceDis)
+
+        if matches[matchIndex]:
+            name = className[matchIndex].upper()
+            print(name)
+
 
 
 
